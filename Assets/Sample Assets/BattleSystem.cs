@@ -39,7 +39,7 @@ public class BattleSystem : MonoBehaviour
 		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
 		enemyUnit = enemyGO.GetComponent<Unit>();
 
-		dialogueText.text = enemyUnit.unitName + " approaches...";
+		dialogueText.text = "A wild " + enemyUnit.unitName + " approaches...";
 
 		playerHUD.SetHUD(playerUnit);
 		enemyHUD.SetHUD(enemyUnit);
@@ -50,23 +50,9 @@ public class BattleSystem : MonoBehaviour
 		PlayerTurn();
 	}
 
-	IEnumerator PlayerAttack(int attackType)
+	IEnumerator PlayerAttack()
 	{
-		if(attackType == 1)
-			dialogueText.text = "You try to reason with " + enemyUnit.unitName;
-		else
-			dialogueText.text = "You try to shove with " + enemyUnit.unitName;
-
-		yield return new WaitForSeconds(1f);
-		bool isDead;
-		int critChance = Random.Range(0, 50);
-		if(critChance <= playerUnit.luck)
-        {
-			dialogueText.text = " You lands a crit!";
-			isDead = enemyUnit.TakeDamage(playerUnit.damage * 2, attackType);
-        }
-		else
-			isDead = enemyUnit.TakeDamage(playerUnit.damage, attackType);
+		bool isDead = enemyUnit.TakeDamage(playerUnit.damage, playerUnit.attackType);
 
 		enemyHUD.SetHP(enemyUnit.currentHP);
 		dialogueText.text = "The attack is successful!";
@@ -89,15 +75,8 @@ public class BattleSystem : MonoBehaviour
 		dialogueText.text = enemyUnit.unitName + " attacks!";
 
 		yield return new WaitForSeconds(1f);
-		bool isDead;
-		int critChance = Random.Range(0, 50);
-		if (critChance <= playerUnit.luck)
-        {
-			dialogueText.text = enemyUnit.unitName + " lands a crit!";
-			isDead = playerUnit.TakeDamage(enemyUnit.damage * 2, enemyUnit.attackType);
-		}
-		else
-			isDead = playerUnit.TakeDamage(enemyUnit.damage, enemyUnit.attackType);
+
+		bool isDead = playerUnit.TakeDamage(enemyUnit.damage, enemyUnit.attackType);
 
 		playerHUD.SetHP(playerUnit.currentHP);
 
@@ -144,20 +123,12 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(EnemyTurn());
 	}
 
-	public void OnPhysAttackButton()
+	public void OnAttackButton()
 	{
 		if (state != BattleState.PLAYERTURN)
 			return;
 
-		StartCoroutine(PlayerAttack(0));
-	}
-
-	public void OnIntAttackButton()
-	{
-		if (state != BattleState.PLAYERTURN)
-			return;
-
-		StartCoroutine(PlayerAttack(1));
+		StartCoroutine(PlayerAttack());
 	}
 
 	public void OnHealButton()
