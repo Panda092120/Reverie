@@ -24,9 +24,11 @@ public class Unit : MonoBehaviour
 	{
 		// dmgType == 0 (physical) || dmgTpe == 1 (intellect)
 		if(dmgType == 0)
-			currentHP -= (dmg - social);
+			currentHP -= (dmg + physical - social);
         else
-            currentHP -= (dmg - social);
+            currentHP -= (dmg + intellect - social);
+
+
 
         if (currentHP <= 0)
 			return true;
