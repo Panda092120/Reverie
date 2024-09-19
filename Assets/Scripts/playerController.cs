@@ -7,10 +7,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float BASE_SPEED = 5;
     private Rigidbody2D rb;
-    public KeyCode interactKey;
+    public KeyCode interact;
 
     float currentSpeed;
-    //NEW
     [SerializeField] private float JUMP_FORCE = 5f;
     //private bool isGrounded = false;
 
@@ -85,7 +84,7 @@ public class PlayerController : MonoBehaviour
         
         dir.Normalize();
         
-        if(Input.GetKeyDown(interactKey))
+        if(Input.GetKeyDown(interact))
         {
             Debug.Log("Interact");
         }
