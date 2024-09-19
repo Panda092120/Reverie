@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float BASE_SPEED = 5;
     private Rigidbody2D rb;
+    public KeyCode interactKey;
 
     float currentSpeed;
     //NEW
@@ -83,17 +84,11 @@ public class PlayerController : MonoBehaviour
         }
         
         dir.Normalize();
-        //NEW
-        //jumping 1
-        //if (vertical > 0 && Mathf.Approximately(rb.velocity.y, 0))
-       // {
-        //    rb.AddRelativeForce(new Vector2(0, JUMP_FORCE), ForceMode2D.Impulse);
-        //}
-        //jumping 2 -- what is the problem?
-        //if (vertical > 0 && isGrounded)
-        //{
-        //    isGrounded = false;
-        //    rb.AddRelativeForce(new Vector2(0, JUMP_FORCE), ForceMode2D.Impulse);
-        //}
+        
+        if(Input.GetKeyDown(interactKey))
+        {
+            Debug.Log("Interact");
+        }
+       
     }
 }
