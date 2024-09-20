@@ -11,7 +11,7 @@ public class TimeManager : MonoBehaviour
     public static int time { get; private set; }
     public static int day { get; private set; }
 
-    public string currTime;
+    public static string currTime;
 
 
     // Start is called before the first frame update
