@@ -9,8 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     float currentSpeed;
-    //NEW
-    [SerializeField] private float JUMP_FORCE = 5f;
+ 
     //private bool isGrounded = false;
 
     // Start is called before the first frame update
