@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class circleMove : MonoBehaviour
@@ -11,15 +12,16 @@ public class circleMove : MonoBehaviour
     public bool moveRight;
     public Transform pointA, pointB;
 
-    public Transform target;
+    public GameObject target;
     public KeyCode space;
+    private bool isOverlap = false;
     void Start()
     {
         //target = GameObject.Find("line").transform;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (moveRight)
         {
@@ -38,15 +40,40 @@ public class circleMove : MonoBehaviour
         {
             moveRight = false;
         }
+
+        if (isOverlap && Input.GetKeyDown(space))
+        {
+            Debug.Log("yay");
+        }
+
+        if (!isOverlap && Input.GetKeyDown(space))
+        {
+            Debug.Log("nay");
+            Destroy(gameObject);
+            return;
+        }
+        
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (Input.GetKeyDown(space))
+        if (col.gameObject == target)
         {
-            Debug.Log("yay");
+            isOverlap = true;
+            
         }
     }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject == target)
+        {
+            isOverlap = false;
+           
+        }
+    }
+    
+    
 
     
 }
