@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     public KeyCode interact;
 
     float currentSpeed;
-    [SerializeField] private float JUMP_FORCE = 5f;
     //private bool isGrounded = false;
 
     // Start is called before the first frame update
