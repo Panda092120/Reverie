@@ -6,7 +6,7 @@ public class ShooterMovement : MonoBehaviour
 {
 
     [SerializeField] private GameObject[] routes;
-    [SerializeField] float speed = 5f;
+    [SerializeField] float speed = 10f;
 
     private int routeIndex;
     // Start is called before the first frame update
