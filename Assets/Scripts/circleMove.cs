@@ -23,6 +23,7 @@ public class circleMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //tells the position using the vector function
         if (moveRight)
         {
             transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
@@ -32,6 +33,7 @@ public class circleMove : MonoBehaviour
             transform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
         }
 
+        //tells the direction that the circle will go
         if (transform.position.x <= pointB.position.x)
         {
             moveRight = true;
@@ -41,6 +43,7 @@ public class circleMove : MonoBehaviour
             moveRight = false;
         }
 
+        //if space is pressed when the circle in on top of the line, then yay, else nay
         if (isOverlap && Input.GetKeyDown(space))
         {
             Debug.Log("yay");
@@ -55,6 +58,7 @@ public class circleMove : MonoBehaviour
         
     }
 
+    //see if the gameObject line is overlapping with the circle
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject == target)
