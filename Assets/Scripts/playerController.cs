@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; //NEW
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,46 +10,30 @@ public class PlayerController : MonoBehaviour
     public KeyCode interact;
 
     float currentSpeed;
+<<<<<<< Updated upstream
     //private bool isGrounded = false;
+=======
+    [SerializeField] private float JUMP_FORCE = 5f;
+    [SerializeField] private float SPRINT_MULTIPLIER = 1.15f; // Sprint increases speed by 15%
+    private float sprintTime = 5f; // Sprint duration
+    private float sprintCooldown = 5f; // Cooldown duration
+    private float sprintTimer = 0f; // Tracks sprint time
+    private float cooldownTimer = 0f; // Tracks cooldown time
+    private bool isSprinting = false; // Sprinting state
+    private bool isCooldown = false; // Cooldown state
+
+    // Animator reference for controlling animations
+    private Animator animator;
+>>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentSpeed = BASE_SPEED;
+        animator = GetComponent<Animator>(); // Get the Animator component
 
-        //DontDestroyOnLoad(this.gameObject); //NEW
-        //SceneManager.sceneLoaded += OnSceneLoaded; //NEW
-    }
-
-    //NEW(for spawn point).  Use if ALSO using DontDestroyOnLoad.  Otherwise, see relevant code in GameManager
-    //void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    //{
-    //GameObject spawner = GameObject.FindGameObjectWithTag("Spawn");
-    //if (spawner)
-    //{
-    //    this.transform.position = spawner.transform.position;
-    //}
-    //}
-
-    //NEW attempt 1
-    //public void SetSpeed(float newSpeed)
-    //{
-    //    currentSpeed = newSpeed;
-    //}
-    //NEW attempt 2
-    public IEnumerator SpeedChange(float newSpeed, float timeInSecs)
-    {
-        currentSpeed = newSpeed;
-        yield return new WaitForSeconds(timeInSecs);
         currentSpeed = BASE_SPEED;
     }
-
-    //NEW
-    //private void OnCollisionStay2D(Collision2D collision)
-    //{
-    //    isGrounded = true;
-    //}
 
     // Update is called once per frame
     void Update()
@@ -58,35 +42,74 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         Vector3 dir = new Vector3(horizontal, vertical, 0);
 
-        //rb.velocity = dir * currentSpeed;
-        //NEW
+        // Handle sprinting mechanics (same as before)
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && !isCooldown)
+        {
+            if (!isSprinting)
+            {
+                isSprinting = true;
+                sprintTimer = 0f;
+            }
+
+            if (isSprinting && sprintTimer < sprintTime)
+            {
+                currentSpeed = BASE_SPEED * SPRINT_MULTIPLIER;
+                sprintTimer += Time.deltaTime;
+            }
+            else
+            {
+                isSprinting = false;
+                isCooldown = true;
+                cooldownTimer = 0f;
+            }
+        }
+        else
+        {
+            currentSpeed = BASE_SPEED;
+        }
+
+        // Handle cooldown (same as before)
+        if (isCooldown)
+        {
+            cooldownTimer += Time.deltaTime;
+            if (cooldownTimer >= sprintCooldown)
+            {
+                isCooldown = false;
+            }
+        }
+
+        // Move the player
         rb.velocity = new Vector2((dir * currentSpeed).x, (dir * currentSpeed).y);
 
-        if (horizontal < 0)
+        // Update animation based on direction
+        if (horizontal > 0)  // Moving right
         {
-            this.transform.rotation = new Quaternion(0, -1, 0, 0);
+            animator.Play("rightWalkAnimation");
+        }
+        else if (horizontal < 0)  // Moving left
+        {
+            animator.Play("leftWalkAnimation");
+        }
+        else if (vertical > 0)  // Moving up
+        {
+            animator.Play("backWalkAnimation");
+        }
+        else if (vertical < 0)  // Moving down
+        {
+            animator.Play("frontWalkAnimation");
         }
         else
         {
-            this.transform.rotation = new Quaternion(0, 0, 0, 0);
+            // Stop walking animation if no movement
+            animator.Play("IdleAnimation"); // Make sure you have an idle animation to default to when not moving
         }
 
-        if (vertical < 0)
-        {
-            this.transform.rotation = new Quaternion(0, 1, 0, 0);
-            
-        }
-        else
-        {
-            this.transform.rotation = new Quaternion(0, -1, 0, 0);
-        }
-        
         dir.Normalize();
-        
-        if(Input.GetKeyDown(interact))
+
+        // Interact key logic (as before)
+        if (Input.GetKeyDown(interact))
         {
             Debug.Log("Interact");
         }
-       
     }
 }
