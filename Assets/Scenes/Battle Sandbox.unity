@@ -2123,7 +2123,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1066908809
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d88935b2af407c7479fbad119b6abb64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2729,7 +2729,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1066908809
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d88935b2af407c7479fbad119b6abb64, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2850,14 +2850,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1356413299}
     m_Modifications:
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5869163025626221828, guid: 260dec1fa30f12845977e712e3225357, type: 3}
-      propertyPath: m_Name
-      value: Dialogue Panel
-      objectReference: {fileID: 0}
-    - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
       objectReference: {fileID: 0}
@@ -2936,6 +2928,10 @@ PrefabInstance:
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869163025626221828, guid: 260dec1fa30f12845977e712e3225357, type: 3}
+      propertyPath: m_Name
+      value: Dialogue Panel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
