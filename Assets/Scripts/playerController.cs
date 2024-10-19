@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,40 +8,41 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public KeyCode interact;
 
-    float currentSpeed;
-<<<<<<< Updated upstream
-    //private bool isGrounded = false;
-=======
+    private float currentSpeed;
     [SerializeField] private float JUMP_FORCE = 5f;
-    [SerializeField] private float SPRINT_MULTIPLIER = 1.15f; // Sprint increases speed by 15%
-    private float sprintTime = 5f; // Sprint duration
-    private float sprintCooldown = 5f; // Cooldown duration
-    private float sprintTimer = 0f; // Tracks sprint time
-    private float cooldownTimer = 0f; // Tracks cooldown time
-    private bool isSprinting = false; // Sprinting state
-    private bool isCooldown = false; // Cooldown state
+    [SerializeField] private float SPRINT_MULTIPLIER = 1.15f;
+    private float sprintTime = 5f;
+    private float sprintCooldown = 5f;
+    private float sprintTimer = 0f;
+    private float cooldownTimer = 0f;
+    private bool isSprinting = false;
+    private bool isCooldown = false;
 
-    // Animator reference for controlling animations
     private Animator animator;
->>>>>>> Stashed changes
+    private bool canMove = true;  // Flag to enable/disable movement
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>(); // Get the Animator component
-
+        animator = GetComponent<Animator>();
         currentSpeed = BASE_SPEED;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // If movement is disabled, don't allow any movement and return
+        if (!canMove)
+        {
+            rb.velocity = Vector2.zero;  // Stop movement if disabled
+            animator.Play("IdleAnimation");  // Force idle animation
+            return;
+        }
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 dir = new Vector3(horizontal, vertical, 0);
 
-        // Handle sprinting mechanics (same as before)
+        // Handle sprinting mechanics
         if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && !isCooldown)
         {
             if (!isSprinting)
@@ -68,7 +68,6 @@ public class PlayerController : MonoBehaviour
             currentSpeed = BASE_SPEED;
         }
 
-        // Handle cooldown (same as before)
         if (isCooldown)
         {
             cooldownTimer += Time.deltaTime;
@@ -79,37 +78,38 @@ public class PlayerController : MonoBehaviour
         }
 
         // Move the player
-        rb.velocity = new Vector2((dir * currentSpeed).x, (dir * currentSpeed).y);
+        rb.velocity = new Vector2(dir.x * currentSpeed, dir.y * currentSpeed);
 
         // Update animation based on direction
-        if (horizontal > 0)  // Moving right
+        if (horizontal > 0)
         {
             animator.Play("rightWalkAnimation");
         }
-        else if (horizontal < 0)  // Moving left
+        else if (horizontal < 0)
         {
             animator.Play("leftWalkAnimation");
         }
-        else if (vertical > 0)  // Moving up
+        else if (vertical > 0)
         {
             animator.Play("backWalkAnimation");
         }
-        else if (vertical < 0)  // Moving down
+        else if (vertical < 0)
         {
             animator.Play("frontWalkAnimation");
         }
         else
         {
-            // Stop walking animation if no movement
-            animator.Play("IdleAnimation"); // Make sure you have an idle animation to default to when not moving
+            animator.Play("IdleAnimation");  // Play idle animation when not moving
         }
+    }
 
-        dir.Normalize();
-
-        // Interact key logic (as before)
-        if (Input.GetKeyDown(interact))
+    // Method to enable or disable player movement
+    public void SetCanMove(bool canMoveStatus)
+    {
+        canMove = canMoveStatus;
+        if (!canMove)
         {
-            Debug.Log("Interact");
+            rb.velocity = Vector2.zero;  // Stop movement immediately
         }
     }
 }
