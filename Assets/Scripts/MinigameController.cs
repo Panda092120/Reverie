@@ -27,7 +27,7 @@ public class MinigameController : MonoBehaviour
     IEnumerator SetupGame()
     {
         count = 0;
-        var minigameNum = Random.Range(1, 2);
+        var minigameNum = Random.Range(1, 3);
         if(minigameNum == 1)
         {
            Minigame = Instantiate(BulletHell);
