@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
-
+	
 	public GameObject playerPrefab;
 	public GameObject enemyPrefab;
 
@@ -124,6 +125,7 @@ public class BattleSystem : MonoBehaviour
 		{
 			dialogueText.text = "You were defeated.";
 		}
+		
 	}
 
 	void PlayerTurn()
@@ -168,4 +170,11 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(PlayerHeal());
 	}
 
+	public void GoToPreviousScene()
+	{
+		SceneStateManager sceneStateManager = FindObjectOfType<SceneStateManager>();
+	}
+
 }
+
+
