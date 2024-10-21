@@ -39,6 +39,7 @@ public class SceneStateManager : MonoBehaviour
         currentSceneName = scene.name;
 
         Debug.Log($"Current scene: {currentSceneName}, Previous scene: {previousSceneName}");
+        LoadSceneState();
     }
 
     // Method to go back to the previous scene without resetting it
@@ -46,22 +47,44 @@ public class SceneStateManager : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(previousSceneName))
         {
+            SaveSceneState();
             SceneManager.LoadScene(previousSceneName, LoadSceneMode.Single);
         }
         else
         {
-            Debug.LogWarning("No previous scene to return to.");
+            Debug.Log("No previous scene to return to.");
         }
     }
 
     // Method to store any custom scene state (example: player position, score, etc.)
     public void SaveSceneState()
     {
-        // Example: you can implement saving game objects, player positions, or other data here
+        //you can implement saving game objects, player positions, or other data here
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            Vector3 playerPosition = player.transform.position;
+            PlayerPrefs.SetFloat(currentSceneName + "_PlayerPosX", playerPosition.x);
+            PlayerPrefs.SetFloat(currentSceneName + "_PlayerPosY", playerPosition.y);
+            PlayerPrefs.SetFloat(currentSceneName + "_PlayerPosZ", playerPosition.z);
+        }
+
+        PlayerPrefs.Save();
+        Debug.Log("Scene state saved.");
+        
     }
 
     public void LoadSceneState()
     {
-        // Example: you can implement loading the saved data for the scene here
+        // you can implement loading the saved data for the scene here
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null && PlayerPrefs.HasKey(currentSceneName + "_PlayerPosX"))
+        {
+            float x = PlayerPrefs.GetFloat(currentSceneName + "_PlayerPosX");
+            float y = PlayerPrefs.GetFloat(currentSceneName + "_PlayerPosY");
+            float z = PlayerPrefs.GetFloat(currentSceneName + "_PlayerPosZ");
+            player.transform.position = new Vector3(x, y, z);
+            Debug.Log("Scene state loaded.");
+        }
     }
 }

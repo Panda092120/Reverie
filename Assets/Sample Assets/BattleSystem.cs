@@ -126,6 +126,7 @@ public class BattleSystem : MonoBehaviour
 			dialogueText.text = "You were defeated.";
 		}
 		
+		GoToPreviousScene();
 	}
 
 	void PlayerTurn()
@@ -173,6 +174,15 @@ public class BattleSystem : MonoBehaviour
 	public void GoToPreviousScene()
 	{
 		SceneStateManager sceneStateManager = FindObjectOfType<SceneStateManager>();
+
+		if (sceneStateManager != null)
+		{
+			sceneStateManager.LoadPreviousScene();
+		}
+		else
+		{
+			Debug.Log("Scene state manager is null");
+		}
 	}
 
 }
