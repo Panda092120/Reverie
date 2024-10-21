@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] GameObject target;
     void Start()
     {
         
@@ -17,8 +16,9 @@ public class Bullet : MonoBehaviour
         
     }
 
-    private void onTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(other.gameObject.name);
+        
     }
+    
 }
