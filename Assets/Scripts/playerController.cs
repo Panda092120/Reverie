@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; //NEW
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,85 +8,108 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public KeyCode interact;
 
-    float currentSpeed;
+    private float currentSpeed;
     [SerializeField] private float JUMP_FORCE = 5f;
-    //private bool isGrounded = false;
+    [SerializeField] private float SPRINT_MULTIPLIER = 1.15f;
+    private float sprintTime = 5f;
+    private float sprintCooldown = 5f;
+    private float sprintTimer = 0f;
+    private float cooldownTimer = 0f;
+    private bool isSprinting = false;
+    private bool isCooldown = false;
 
-    // Start is called before the first frame update
+    private Animator animator;
+    private bool canMove = true;  // Flag to enable/disable movement
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        currentSpeed = BASE_SPEED;
-
-        //DontDestroyOnLoad(this.gameObject); //NEW
-        //SceneManager.sceneLoaded += OnSceneLoaded; //NEW
-    }
-
-    //NEW(for spawn point).  Use if ALSO using DontDestroyOnLoad.  Otherwise, see relevant code in GameManager
-    //void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    //{
-    //GameObject spawner = GameObject.FindGameObjectWithTag("Spawn");
-    //if (spawner)
-    //{
-    //    this.transform.position = spawner.transform.position;
-    //}
-    //}
-
-    //NEW attempt 1
-    //public void SetSpeed(float newSpeed)
-    //{
-    //    currentSpeed = newSpeed;
-    //}
-    //NEW attempt 2
-    public IEnumerator SpeedChange(float newSpeed, float timeInSecs)
-    {
-        currentSpeed = newSpeed;
-        yield return new WaitForSeconds(timeInSecs);
+        animator = GetComponent<Animator>();
         currentSpeed = BASE_SPEED;
     }
 
-    //NEW
-    //private void OnCollisionStay2D(Collision2D collision)
-    //{
-    //    isGrounded = true;
-    //}
-
-    // Update is called once per frame
     void Update()
     {
+        // If movement is disabled, don't allow any movement and return
+        if (!canMove)
+        {
+            rb.velocity = Vector2.zero;  // Stop movement if disabled
+            animator.Play("IdleAnimation");  // Force idle animation
+            return;
+        }
+
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 dir = new Vector3(horizontal, vertical, 0);
 
-        //rb.velocity = dir * currentSpeed;
-        //NEW
-        rb.velocity = new Vector2((dir * currentSpeed).x, (dir * currentSpeed).y);
-
-        if (horizontal < 0)
+        // Handle sprinting mechanics
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && !isCooldown)
         {
-            this.transform.rotation = new Quaternion(0, -1, 0, 0);
+            if (!isSprinting)
+            {
+                isSprinting = true;
+                sprintTimer = 0f;
+            }
+
+            if (isSprinting && sprintTimer < sprintTime)
+            {
+                currentSpeed = BASE_SPEED * SPRINT_MULTIPLIER;
+                sprintTimer += Time.deltaTime;
+            }
+            else
+            {
+                isSprinting = false;
+                isCooldown = true;
+                cooldownTimer = 0f;
+            }
         }
         else
         {
-            this.transform.rotation = new Quaternion(0, 0, 0, 0);
+            currentSpeed = BASE_SPEED;
         }
 
-        if (vertical < 0)
+        if (isCooldown)
         {
-            this.transform.rotation = new Quaternion(0, 1, 0, 0);
-            
+            cooldownTimer += Time.deltaTime;
+            if (cooldownTimer >= sprintCooldown)
+            {
+                isCooldown = false;
+            }
+        }
+
+        // Move the player
+        rb.velocity = new Vector2(dir.x * currentSpeed, dir.y * currentSpeed);
+
+        // Update animation based on direction
+        /*if (horizontal > 0)
+        {
+            animator.Play("rightWalkAnimation");
+        }
+        else if (horizontal < 0)
+        {
+            animator.Play("leftWalkAnimation");
+        }
+        else if (vertical > 0)
+        {
+            animator.Play("backWalkAnimation");
+        }
+        else if (vertical < 0)
+        {
+            animator.Play("frontWalkAnimation");
         }
         else
         {
-            this.transform.rotation = new Quaternion(0, -1, 0, 0);
-        }
-        
-        dir.Normalize();
-        
-        if(Input.GetKeyDown(interact))
+            animator.Play("IdleAnimation");  // Play idle animation when not moving
+        }*/
+    }
+
+    // Method to enable or disable player movement
+    public void SetCanMove(bool canMoveStatus)
+    {
+        canMove = canMoveStatus;
+        if (!canMove)
         {
-            Debug.Log("Interact");
+            rb.velocity = Vector2.zero;  // Stop movement immediately
         }
-       
     }
 }
