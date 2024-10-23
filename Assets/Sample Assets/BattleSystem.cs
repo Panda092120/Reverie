@@ -66,6 +66,7 @@ public class BattleSystem : MonoBehaviour
 		yield return new WaitForSeconds(1f);
 		bool isDead;
 		MinigameControl.Begin();
+		yield return new WaitForSeconds(5.5f);
 
 		int critChance = Random.Range(0, 50);
 		if (critChance <= playerUnit.luck)
