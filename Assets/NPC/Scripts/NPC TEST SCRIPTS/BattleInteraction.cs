@@ -28,6 +28,7 @@ public class BattleInteraction : MonoBehaviour
         // If the dialogue is finished and a scene swap is required, change scenes
         if (triggerSceneSwap && !dialogueManager.IsDialogueActive())
         {
+            SaveSceneData();
             SceneManager.LoadScene(sceneName);
         }
     }
@@ -61,6 +62,20 @@ public class BattleInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
+        }
+    }
+
+    public void SaveSceneData()
+    {
+        SceneStateManager sceneStateManager = FindObjectOfType<SceneStateManager>();
+
+        if (sceneStateManager != null)
+        {
+            sceneStateManager.SaveSceneState();
+        }
+        else
+        {
+            Debug.Log("Scene state manager is null");
         }
     }
 }

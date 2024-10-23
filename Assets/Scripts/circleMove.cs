@@ -4,19 +4,17 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
-
 public class circleMove : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    private float speed = 5f;
+    private float speed = 10f;
     public bool moveRight;
     public Transform pointA, pointB;
 
     public GameObject target;
     public KeyCode space;
     private bool isOverlap = false;
-    public int count = 0;
     void Start()
     {
         //target = GameObject.Find("line").transform;
@@ -46,12 +44,13 @@ public class circleMove : MonoBehaviour
         if (isOverlap && Input.GetKeyDown(space))
         {
             Debug.Log("yay");
-            count++;
         }
 
         if (!isOverlap && Input.GetKeyDown(space))
         {
             Debug.Log("nay");
+            Destroy(gameObject);
+            return;
         }
         
     }

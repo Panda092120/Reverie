@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
 public class BattleSystem : MonoBehaviour
 {
-
+	
 	public GameObject playerPrefab;
 	public GameObject enemyPrefab;
 
@@ -24,23 +25,17 @@ public class BattleSystem : MonoBehaviour
 
 	public BattleState state;
 
-	public int count;
-	public bool WinLoss;
-
-	MinigameController MinigameControl;
-
-	// Start is called before the first frame update
-	void Start()
-	{
+    // Start is called before the first frame update
+    void Start()
+    {
 		state = BattleState.START;
 		StartCoroutine(SetupBattle());
-	}
+    }
 
 	IEnumerator SetupBattle()
 	{
 		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
 		playerUnit = playerGO.GetComponent<Unit>();
-		MinigameControl = GetComponent<MinigameController>();
 
 		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
 		enemyUnit = enemyGO.GetComponent<Unit>();
@@ -58,7 +53,7 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack(int attackType)
 	{
-		if (attackType == 1)
+		if(attackType == 1)
 			dialogueText.text = "You try to reason with " + enemyUnit.unitName;
 		else
 			dialogueText.text = "You try to shove with " + enemyUnit.unitName;
@@ -69,11 +64,11 @@ public class BattleSystem : MonoBehaviour
 		yield return new WaitForSeconds(5.5f);
 
 		int critChance = Random.Range(0, 50);
-		if (critChance <= playerUnit.luck)
-		{
+		if(critChance <= playerUnit.luck)
+        {
 			dialogueText.text = " You lands a crit!";
 			isDead = enemyUnit.TakeDamage(playerUnit.damage * 2, attackType);
-		}
+        }
 		else
 			isDead = enemyUnit.TakeDamage(playerUnit.damage, attackType);
 
@@ -82,12 +77,11 @@ public class BattleSystem : MonoBehaviour
 
 		yield return new WaitForSeconds(2f);
 
-		if (isDead)
+		if(isDead)
 		{
 			state = BattleState.WON;
 			EndBattle();
-		}
-		else
+		} else
 		{
 			state = BattleState.ENEMYTURN;
 			StartCoroutine(EnemyTurn());
@@ -102,7 +96,7 @@ public class BattleSystem : MonoBehaviour
 		bool isDead;
 		int critChance = Random.Range(0, 50);
 		if (critChance <= playerUnit.luck)
-		{
+        {
 			dialogueText.text = enemyUnit.unitName + " lands a crit!";
 			isDead = playerUnit.TakeDamage(enemyUnit.damage * 2, enemyUnit.attackType);
 		}
@@ -113,12 +107,11 @@ public class BattleSystem : MonoBehaviour
 
 		yield return new WaitForSeconds(1f);
 
-		if (isDead)
+		if(isDead)
 		{
 			state = BattleState.LOST;
 			EndBattle();
-		}
-		else
+		} else
 		{
 			state = BattleState.PLAYERTURN;
 			PlayerTurn();
@@ -128,14 +121,15 @@ public class BattleSystem : MonoBehaviour
 
 	void EndBattle()
 	{
-		if (state == BattleState.WON)
+		if(state == BattleState.WON)
 		{
 			dialogueText.text = "You won the battle!";
-		}
-		else if (state == BattleState.LOST)
+		} else if (state == BattleState.LOST)
 		{
 			dialogueText.text = "You were defeated.";
 		}
+		
+		GoToPreviousScene();
 	}
 
 	void PlayerTurn()
@@ -180,4 +174,20 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(PlayerHeal());
 	}
 
+	public void GoToPreviousScene()
+	{
+		SceneStateManager sceneStateManager = FindObjectOfType<SceneStateManager>();
+
+		if (sceneStateManager != null)
+		{
+			sceneStateManager.LoadPreviousScene();
+		}
+		else
+		{
+			Debug.Log("Scene state manager is null");
+		}
+	}
+
 }
+
+
