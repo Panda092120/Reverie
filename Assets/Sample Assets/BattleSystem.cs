@@ -28,7 +28,7 @@ public class BattleSystem : MonoBehaviour
 	public int count;
 	public bool WinLoss;
 
-	MinigameController MinigameControl;
+	public MinigameController MinigameControl;
 
 	// Start is called before the first frame update
 	void Start()
@@ -41,7 +41,12 @@ public class BattleSystem : MonoBehaviour
 	{
 		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
 		playerUnit = playerGO.GetComponent<Unit>();
-		MinigameControl = GetComponent<MinigameController>();
+		//MinigameControl = GetComponent<MinigameController>();
+		MinigameControl = FindObjectOfType<MinigameController>();
+		if (MinigameControl == null)
+		{
+			Debug.Log("MinigameController not found!");
+		}
 
 		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
 		enemyUnit = enemyGO.GetComponent<Unit>();
