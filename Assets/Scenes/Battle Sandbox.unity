@@ -2931,19 +2931,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_AnchoredPosition.x
-<<<<<<< HEAD:Assets/Scenes/Battle Sandbox.unity
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 175
-=======
-      value: 0.13049316
-      objectReference: {fileID: 0}
-    - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 96
->>>>>>> main:Assets/Scenes/BattleSandbox.unity
       objectReference: {fileID: 0}
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
