@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+<<<<<<< Updated upstream
+=======
+  - enabled: 1
+    path: Assets/Scenes/Exterior/UniversityScene.unity
+    guid: 9da4227b972874b2ea2b7634345f743a
+  - enabled: 1
+    path: Assets/Scenes/Battle Sandbox.unity
+    guid: 984a549282fd5ff40ac761a17daedc21
+>>>>>>> Stashed changes
   m_configObjects: {}
