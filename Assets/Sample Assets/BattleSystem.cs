@@ -180,4 +180,18 @@ public class BattleSystem : MonoBehaviour
 		StartCoroutine(PlayerHeal());
 	}
 
+	public void GoToPreviousScene()
+	{
+		SceneStateManager sceneStateManager = FindObjectOfType<SceneStateManager>();
+
+		if (sceneStateManager != null)
+		{
+			sceneStateManager.LoadPreviousScene();
+		}
+		else
+		{
+			Debug.Log("Scene state manager is null");
+		}
+	}
+	
 }
