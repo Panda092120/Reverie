@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7881148878052859072}
   - component: {fileID: 5726206262509165206}
   - component: {fileID: 6703997925960899813}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Border (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 8462989078803263053}
   - component: {fileID: 3854161395581240395}
   - component: {fileID: 1957491229052191880}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Border (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 77706507527002150}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Point3
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -329,7 +329,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5155694387262086869}
   - component: {fileID: 7419553701228853044}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BulletHell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ Transform:
   m_GameObject: {fileID: 4882713652698923689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9206151, y: 0.6146345, z: 10}
+  m_LocalPosition: {x: -0.288056, y: -1.506076, z: 10}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 2163993036039820011}
   - component: {fileID: 8549926694978081903}
   - component: {fileID: 5439147071915130175}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 5425165314292093354}
   - component: {fileID: 3554947970451310832}
   - component: {fileID: 438774085460667421}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3286661721460482001}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Point4
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 5183607671959527002}
   - component: {fileID: 531695051032739426}
   - component: {fileID: 5514900801869830922}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Border (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -863,7 +863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9110202635896923213}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Point1
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -898,7 +898,7 @@ GameObject:
   - component: {fileID: 2953999728746779939}
   - component: {fileID: 4115575679926662039}
   - component: {fileID: 5573416618268340263}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: You
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1059,7 +1059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168814965028824992}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1094,7 +1094,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2146128859095965675}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Point2
   m_TagString: Untagged
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
@@ -1126,7 +1126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6499866269406730634}
   - component: {fileID: 3709573506457839345}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

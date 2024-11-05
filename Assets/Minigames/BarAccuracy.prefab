@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4142588551296710415}
   - component: {fileID: 4334349914695374810}
   - component: {fileID: 2842977423677114505}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: border4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2500155492496769168}
   - component: {fileID: 1578316343197553903}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3194599628799890103}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: H_PointA
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 3477187539041599543}
   - component: {fileID: 5723028913545921153}
   - component: {fileID: 3230874857299332805}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 3083932162965340714}
   - component: {fileID: 94591206512277676}
   - component: {fileID: 3968101562325381442}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 815072532276182054}
   - component: {fileID: 277106206836349982}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BarAccuracy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +569,7 @@ Transform:
   m_GameObject: {fileID: 3827430125009018801}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.68, y: 0.79, z: 10}
+  m_LocalPosition: {x: -1.045476, y: -0.9340074, z: 10}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 4439400230603058413}
   - component: {fileID: 381088723873539169}
   - component: {fileID: 4345253812817392818}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: border2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -719,7 +719,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4804714307243120444}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: H_PointB
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 1174389463264266259}
   - component: {fileID: 5054587208292322895}
   - component: {fileID: 7955206915077938117}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: border3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 1362611700917171903}
   - component: {fileID: 4723335345060686190}
   - component: {fileID: 4656321645167400447}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
