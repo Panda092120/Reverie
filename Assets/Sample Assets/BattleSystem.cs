@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,11 @@ public class BattleSystem : MonoBehaviour
 	public BattleHUD enemyHUD;
 
 	public BattleState state;
+
+	public Button attackButton;
+	public Button reasonButton;
+	public Button ItemButton;
+	public Button RunButton;
 
 	public int count;
 	public bool WinLoss;
@@ -58,12 +64,16 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack(int attackType)
 	{
+		attackButton.enabled = true;
+		reasonButton.enabled = true;
 		if (attackType == 1)
 			dialogueText.text = "You try to reason with " + enemyUnit.unitName;
 		else
 			dialogueText.text = "You try to shove with " + enemyUnit.unitName;
 
-		yield return new WaitForSeconds(1f);
+		attackButton.enabled = false;
+		reasonButton.enabled = false;
+		//yield return new WaitForSeconds(1f);
 		bool isDead;
 		MinigameControl.Begin();
 		yield return new WaitForSeconds(5.5f);
@@ -136,6 +146,7 @@ public class BattleSystem : MonoBehaviour
 		{
 			dialogueText.text = "You were defeated.";
 		}
+		GoToPreviousScene();
 	}
 
 	void PlayerTurn()
