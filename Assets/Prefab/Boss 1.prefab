@@ -111,7 +111,7 @@ MonoBehaviour:
   unitLevel: 123
   damage: 123
   maxHP: 342
-  currentHP: 12
+  currentHP: 100
   intellect: 434
   physical: 123
   social: 23

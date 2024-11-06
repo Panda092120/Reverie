@@ -17,6 +17,7 @@ public class circleMove : MonoBehaviour
     public KeyCode space;
     private bool isOverlap = false;
     public int count = 0;
+    public int healthCount = 3;
     void Start()
     {
         //target = GameObject.Find("line").transform;
@@ -47,11 +48,17 @@ public class circleMove : MonoBehaviour
         {
             Debug.Log("yay");
             count++;
+            
         }
 
         if (!isOverlap && Input.GetKeyDown(space))
         {
             Debug.Log("nay");
+            healthCount--;
+            if (healthCount == 0)
+            {
+                Destroy(gameObject);
+            }
         }
         
     }

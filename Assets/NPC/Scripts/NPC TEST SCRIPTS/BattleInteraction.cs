@@ -15,6 +15,7 @@ public class BattleInteraction : MonoBehaviour
     [SerializeField] private string sceneName;  // The scene we would like to move into after dialogue ends
 
     private bool triggerSceneSwap = false;  // Flag to check if we need to change scenes after dialogue
+    
 
     private void Update()
     {
@@ -28,6 +29,7 @@ public class BattleInteraction : MonoBehaviour
         // If the dialogue is finished and a scene swap is required, change scenes
         if (triggerSceneSwap && !dialogueManager.IsDialogueActive())
         {
+            
             SceneManager.LoadScene(sceneName);
         }
     }
@@ -61,6 +63,19 @@ public class BattleInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInRange = false;
+        }
+    }
+    public void GoToPreviousScene()
+    {
+        SceneStateManager sceneStateManager = FindObjectOfType<SceneStateManager>();
+
+        if (sceneStateManager != null)
+        {
+            sceneStateManager.SaveSceneState();
+        }
+        else
+        {
+            Debug.Log("Scene state manager is null");
         }
     }
 }

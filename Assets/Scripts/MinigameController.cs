@@ -32,6 +32,7 @@ public class MinigameController : MonoBehaviour
         {
            Minigame = Instantiate(BulletHell);
            BulletHellScript = Minigame.GetComponent<ShootersShoot>();
+           yield return new WaitForSeconds(4.5f);
 
         }
         else if(minigameNum == 2)
@@ -42,6 +43,7 @@ public class MinigameController : MonoBehaviour
             count = LinePressScript.count;
             Debug.Log(count);
         }
+        
         
     }
 
