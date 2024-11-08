@@ -18,9 +18,10 @@ public class circleMove : MonoBehaviour
     private bool isOverlap = false;
     public int count = 0;
     public int healthCount = 3;
+    MinigameController minigameController;
     void Start()
     {
-        //target = GameObject.Find("line").transform;
+        minigameController = FindObjectOfType<MinigameController>();
     }
 
     // Update is called once per frame
@@ -47,7 +48,7 @@ public class circleMove : MonoBehaviour
         if (isOverlap && Input.GetKeyDown(space))
         {
             Debug.Log("yay");
-            count++;
+            minigameController.count++;
             
         }
 
@@ -57,6 +58,7 @@ public class circleMove : MonoBehaviour
             healthCount--;
             if (healthCount == 0)
             {
+                minigameController.State = GameState.LOST;
                 Destroy(gameObject);
             }
         }

@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+
+
 public class Projectile : MonoBehaviour
 {
+
+    MinigameController minigameController;
     // Start is called before the first frame update
     void Start()
     {
-        
+        minigameController = FindObjectOfType<MinigameController>();
     }
 
     // Update is called once per frame
@@ -21,6 +25,8 @@ public class Projectile : MonoBehaviour
     {
         if (collision.gameObject.tag != "Bullet")
         {
+            minigameController.count++;
+            Debug.Log("hit");
             Destroy(gameObject);
         }
         

@@ -1817,6 +1817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 8258482621335059390, guid: 260dec1fa30f12845977e712e3225357, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 287.5799
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2070,6 +2074,10 @@ MonoBehaviour:
   playerHUD: {fileID: 442543653}
   enemyHUD: {fileID: 1213833138}
   state: 0
+  attackButton: {fileID: 1634520117}
+  reasonButton: {fileID: 1381239362}
+  ItemButton: {fileID: 153650983}
+  RunButton: {fileID: 193724189}
   count: 0
   WinLoss: 0
 --- !u!4 &1213177831
