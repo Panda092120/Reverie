@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle Sandbox.unity
     guid: 984a549282fd5ff40ac761a17daedc21
+  - enabled: 1
+    path: Assets/Scenes/Floyd_Dialogue2Test.unity
+    guid: c5a82a2b70dd9e947adeb7fe654dd228
+  - enabled: 1
+    path: Assets/Scenes/Floyd_Dialogue2Test2.unity
+    guid: 5327691cf0d183a4e98c8dbb5ba25efb
   m_configObjects: {}
