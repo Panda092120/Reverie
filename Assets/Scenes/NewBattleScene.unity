@@ -1759,11 +1759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -680.788
+      value: -680.79
       objectReference: {fileID: 0}
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -775.5341
+      value: -847.74
       objectReference: {fileID: 0}
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1799,7 +1799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 380
+      value: 416.1
       objectReference: {fileID: 0}
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2063,13 +2063,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 5674484368629161613, guid: 10021f1ffb851ee42a2f9e2ce33428b7, type: 3}
-  enemyPrefab: {fileID: 1157719062467119893, guid: ffef6e1bfa5612a4ab1e2bcb58eb6d8c, type: 3}
+  enemyPrefab: {fileID: 5847535219569915328, guid: bccb485d064fb9649b3c2d6557b05a2e, type: 3}
   playerBattleStation: {fileID: 442543649}
   enemyBattleStation: {fileID: 1213833137}
   dialogueText: {fileID: 1294374407}
   playerHUD: {fileID: 442543653}
   enemyHUD: {fileID: 1213833138}
   state: 0
+  attackButton: {fileID: 1634520117}
+  reasonButton: {fileID: 1381239362}
+  ItemButton: {fileID: 153650983}
+  RunButton: {fileID: 193724189}
   count: 0
   WinLoss: 0
 --- !u!4 &1213177831
@@ -2275,7 +2279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7735849, g: 0, b: 0.76611704, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
