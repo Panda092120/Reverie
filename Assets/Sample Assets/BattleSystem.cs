@@ -33,7 +33,7 @@ public class BattleSystem : MonoBehaviour
 	public int count;
 	public bool WinLoss;
 
-	MinigameController MinigameControl;
+	MinigameController minigameController;
 
 	// Start is called before the first frame update
 	void Start()
@@ -46,7 +46,7 @@ public class BattleSystem : MonoBehaviour
 	{
 		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
 		playerUnit = playerGO.GetComponent<Unit>();
-		MinigameControl = GetComponent<MinigameController>();
+		minigameController = FindObjectOfType<MinigameController>();
 
 		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
 		enemyUnit = enemyGO.GetComponent<Unit>();
@@ -64,8 +64,7 @@ public class BattleSystem : MonoBehaviour
 
 	IEnumerator PlayerAttack(int attackType)
 	{
-		attackButton.enabled = true;
-		reasonButton.enabled = true;
+		
 		if (attackType == 1)
 			dialogueText.text = "You try to reason with " + enemyUnit.unitName;
 		else
@@ -76,33 +75,44 @@ public class BattleSystem : MonoBehaviour
 		//yield return new WaitForSeconds(1f);
 		
 		bool isDead;
-		MinigameControl.Begin();
+		minigameController.Begin();
 		yield return new WaitForSeconds(5.5f);
+		if(minigameController.State == GameState.WON)
+        {
+			int critChance = Random.Range(0, 50);
+			if (critChance <= playerUnit.luck)
+			{
+				dialogueText.text = " You lands a crit!";
+				isDead = enemyUnit.TakeDamage(playerUnit.damage * 2, attackType);
+			}
+			else
+				isDead = enemyUnit.TakeDamage(playerUnit.damage, attackType);
 
-		int critChance = Random.Range(0, 50);
-		if (critChance <= playerUnit.luck)
-		{
-			dialogueText.text = " You lands a crit!";
-			isDead = enemyUnit.TakeDamage(playerUnit.damage * 2, attackType);
-		}
-		else
-			isDead = enemyUnit.TakeDamage(playerUnit.damage, attackType);
+			enemyHUD.SetHP(enemyUnit.currentHP);
+			dialogueText.text = "The attack is successful!";
 
-		enemyHUD.SetHP(enemyUnit.currentHP);
-		dialogueText.text = "The attack is successful!";
+			yield return new WaitForSeconds(2f);
 
-		yield return new WaitForSeconds(2f);
-
-		if (isDead)
-		{
-			state = BattleState.WON;
-			EndBattle();
-		}
-		else
-		{
+			if (isDead)
+			{
+				state = BattleState.WON;
+				EndBattle();
+			}
+			else
+			{
+				state = BattleState.ENEMYTURN;
+				StartCoroutine(EnemyTurn());
+			}
+		} else
+        {
+			dialogueText.text = "You missed!";
+			yield return new WaitForSeconds(2f);
 			state = BattleState.ENEMYTURN;
 			StartCoroutine(EnemyTurn());
 		}
+
+
+		
 	}
 
 	IEnumerator EnemyTurn()
@@ -153,6 +163,8 @@ public class BattleSystem : MonoBehaviour
 	void PlayerTurn()
 	{
 		dialogueText.text = "Choose an action:";
+		attackButton.enabled = true;
+		reasonButton.enabled = true;
 	}
 
 	IEnumerator PlayerHeal()

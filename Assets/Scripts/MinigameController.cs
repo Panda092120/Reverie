@@ -12,7 +12,7 @@ public class MinigameController : MonoBehaviour
     public GameObject LinePress;
     GameObject Minigame;
     circleMove LinePressScript;
-    public int count = 0;
+    public int count;
 
 
 
@@ -20,6 +20,7 @@ public class MinigameController : MonoBehaviour
 
     public void Begin()
     {
+        count = 0;
         State = GameState.START;
         StartCoroutine(SetupGame());
     }
@@ -28,20 +29,28 @@ public class MinigameController : MonoBehaviour
     {
         count = 0;
         var minigameNum = Random.Range(1, 3);
+        State = GameState.WON;
+        minigameNum = 1;
         if(minigameNum == 1)
         {
            Minigame = Instantiate(BulletHell);
            BulletHellScript = Minigame.GetComponent<ShootersShoot>();
-           yield return new WaitForSeconds(4.5f);
+           yield return new WaitForSeconds(4.9f);
+            if (count >= 3)
+                State = GameState.LOST;
+           Debug.Log("here");
 
         }
         else if(minigameNum == 2)
         {
+            State = GameState.LOST;
             Minigame = Instantiate(LinePress);
-            LinePressScript = Minigame.GetComponent<circleMove>();
-            yield return new WaitForSeconds(4.5f);
-            count = LinePressScript.count;
+            LinePressScript = Minigame.GetComponentInChildren<circleMove>();
+            yield return new WaitForSeconds(4.9f);
             Debug.Log(count);
+            if (count >= 5)
+                State = GameState.WON;
+            Debug.Log("here");
         }
         
         
