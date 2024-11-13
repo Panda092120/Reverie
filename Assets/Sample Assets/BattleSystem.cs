@@ -74,6 +74,7 @@ public class BattleSystem : MonoBehaviour
 		attackButton.enabled = false;
 		reasonButton.enabled = false;
 		//yield return new WaitForSeconds(1f);
+		
 		bool isDead;
 		MinigameControl.Begin();
 		yield return new WaitForSeconds(5.5f);

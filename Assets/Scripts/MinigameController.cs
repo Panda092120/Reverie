@@ -46,5 +46,6 @@ public class MinigameController : MonoBehaviour
         
         
     }
+    
 
 }
