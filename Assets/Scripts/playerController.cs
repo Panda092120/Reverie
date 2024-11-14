@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(dir.x * currentSpeed, dir.y * currentSpeed);
 
         // Update animation based on direction
-        if (horizontal > 0)
+        /*if (horizontal > 0)
         {
             animator.Play("rightWalkAnimation");
         }
@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.Play("IdleAnimation");  // Play idle animation when not moving
-        }
+        }*/
     }
 
     // Method to enable or disable player movement
