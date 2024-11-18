@@ -49,6 +49,13 @@ public class SceneStateManager : MonoBehaviour
         {
             SaveSceneState();
             SceneManager.LoadScene(previousSceneName, LoadSceneMode.Single);
+            GameObject player = GameObject.FindWithTag("Player");
+
+            float x = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosX");
+            float y = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosY");
+            float z = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosZ");
+            player.transform.position = new Vector3(x, y, z);
+
         }
         else
         {
