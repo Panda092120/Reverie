@@ -6,6 +6,8 @@ public class statTestSheep : MonoBehaviour
 {
     void Start()
     {
+        //The following are used for testing, delete when implemented into the game
+
         // Accessing the StatManager instance
         StatManager statManager = StatManager.Instance;
 
