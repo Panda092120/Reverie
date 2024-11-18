@@ -1795,7 +1795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -63
+      value: -63.000183
       objectReference: {fileID: 0}
     - target: {fileID: 2294796554358491549, guid: 260dec1fa30f12845977e712e3225357, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3498,10 +3498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 1000}
+  m_ReferenceResolution: {x: 800, y: 990}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
