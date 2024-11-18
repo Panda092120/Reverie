@@ -147,7 +147,7 @@ public class BattleSystem : MonoBehaviour
 
 	}
 
-	void EndBattle()
+	void EndBattle() //add battle rewards here
 	{
 		if (state == BattleState.WON)
 		{
