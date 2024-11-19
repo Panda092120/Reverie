@@ -24,6 +24,7 @@ public class BattleInteraction : MonoBehaviour
         {
             // Start the NPC dialogue
             StartNPCDialogue();
+            SceneSave();
         }
 
         // If the dialogue is finished and a scene swap is required, change scenes
@@ -65,13 +66,14 @@ public class BattleInteraction : MonoBehaviour
             isPlayerInRange = false;
         }
     }
-    public void GoToPreviousScene()
+    public void SceneSave()
     {
         SceneStateManager sceneStateManager = FindObjectOfType<SceneStateManager>();
 
         if (sceneStateManager != null)
         {
             sceneStateManager.SaveSceneState();
+            Debug.Log("Saved Scene State");
         }
         else
         {
