@@ -1,3 +1,4 @@
+using UnityEditor.Scripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,8 +6,8 @@ public class SceneStateManager : MonoBehaviour
 {
     private static SceneStateManager instance;
 
-    private string previousSceneName;
-    private string currentSceneName;
+    public string previousSceneName;
+    public string currentSceneName;
 
     private void Awake()
     {
@@ -39,7 +40,7 @@ public class SceneStateManager : MonoBehaviour
         currentSceneName = scene.name;
 
         Debug.Log($"Current scene: {currentSceneName}, Previous scene: {previousSceneName}");
-        LoadSceneState();
+        //LoadSceneState();
     }
 
     // Method to go back to the previous scene without resetting it
@@ -53,8 +54,11 @@ public class SceneStateManager : MonoBehaviour
 
             float x = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosX");
             float y = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosY");
-            float z = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosZ");
-            player.transform.position = new Vector3(x, y, z);
+            //float z = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosZ");
+            Vector2 pos = new Vector2(x, y);
+            player.transform.position = pos;
+            Debug.Log(PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosX"));
+            Debug.Log(PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosY"));
 
         }
         else
@@ -70,27 +74,32 @@ public class SceneStateManager : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
         {
-            Vector3 playerPosition = player.transform.position;
+            Vector2 playerPosition = player.transform.position;
             PlayerPrefs.SetFloat(currentSceneName + "_PlayerPosX", playerPosition.x);
             PlayerPrefs.SetFloat(currentSceneName + "_PlayerPosY", playerPosition.y);
-            PlayerPrefs.SetFloat(currentSceneName + "_PlayerPosZ", playerPosition.z);
+            //PlayerPrefs.SetFloat(currentSceneName + "_PlayerPosZ", playerPosition.z);
         }
 
         PlayerPrefs.Save();
+        Debug.Log(PlayerPrefs.GetFloat(currentSceneName + "_PlayerPosX"));
+        Debug.Log(PlayerPrefs.GetFloat(currentSceneName + "_PlayerPosY"));
         Debug.Log("Scene state saved.");
         
     }
 
     public void LoadSceneState()
     {
+        //SaveSceneState();
+        //SceneManager.LoadScene(previousSceneName, LoadSceneMode.Single);
         // you can implement loading the saved data for the scene here
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null && PlayerPrefs.HasKey(currentSceneName + "_PlayerPosX"))
         {
             float x = PlayerPrefs.GetFloat(currentSceneName + "_PlayerPosX");
             float y = PlayerPrefs.GetFloat(currentSceneName + "_PlayerPosY");
-            float z = PlayerPrefs.GetFloat(currentSceneName + "_PlayerPosZ");
-            player.transform.position = new Vector3(x, y, z);
+            //float z = PlayerPrefs.GetFloat(currentSceneName + "_PlayerPosZ");
+            player.transform.position = new Vector2(x, y);
+            
             Debug.Log("Scene state loaded.");
         }
     }
