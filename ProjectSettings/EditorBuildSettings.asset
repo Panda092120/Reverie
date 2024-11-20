@@ -23,19 +23,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Floyd_Dialogue2Test2.unity
     guid: 5327691cf0d183a4e98c8dbb5ba25efb
-  - enabled: 1
-    path: Assets/Scenes/Interior/McBedroom.unity
-    guid: 26273307bdc497642bc369d0dc7af287
-  - enabled: 1
-    path: Assets/Scenes/Interior/ApartmentScene.unity
-    guid: a1061756a5c2256408a80a9c791753b7
-  - enabled: 1
-    path: Assets/Scenes/University HUB scene.unity
-    guid: d768bec06289ed24fa6d6d3b29b03d76
-  - enabled: 1
-    path: Assets/Scenes/Interior/gym.unity
-    guid: 899d691554c8df848a003cc1f66217c2
-  - enabled: 1
-    path: Assets/Scenes/Interior/Ice Cream Shop.unity
-    guid: d0abb29e7425daa4ca4d6851d63ec26b
   m_configObjects: {}

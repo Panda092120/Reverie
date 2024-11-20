@@ -24,14 +24,13 @@ public class BattleInteraction : MonoBehaviour
         {
             // Start the NPC dialogue
             StartNPCDialogue();
-            
+            SceneSave();
         }
 
         // If the dialogue is finished and a scene swap is required, change scenes
         if (triggerSceneSwap && !dialogueManager.IsDialogueActive())
         {
             
-            SceneSave();
             SceneManager.LoadScene(sceneName);
         }
     }
@@ -46,12 +45,6 @@ public class BattleInteraction : MonoBehaviour
             if (battle)
             {
                 triggerSceneSwap = true;
-                PlayerManager playerManager = FindObjectOfType<PlayerManager>();
-                GameObject player = GameObject.FindWithTag("Player");
-                if (playerManager != null)
-                {
-                    PlayerManager.savedPlayerPosition = player.transform.position;
-                }
             }
         }
     }
