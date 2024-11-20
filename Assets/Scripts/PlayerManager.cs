@@ -21,6 +21,7 @@ public class PlayerManager : MonoBehaviour
         if (player != null)
         {
             player.transform.position = savedPlayerPosition;
+            Debug.Log(savedPlayerPosition);
         }
     }
 }

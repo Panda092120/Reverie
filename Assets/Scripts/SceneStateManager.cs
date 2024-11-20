@@ -38,6 +38,20 @@ public class SceneStateManager : MonoBehaviour
         // Update the previous scene to the last current scene and set the new current scene
         previousSceneName = currentSceneName;
         currentSceneName = scene.name;
+        
+        if (!string.IsNullOrEmpty(previousSceneName))
+        {
+            GameObject player = GameObject.FindWithTag("Player");
+            if (player != null)
+            {
+                float x = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosX", player.transform.position.x);
+                float y = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosY", player.transform.position.y);
+                Debug.Log(x);
+                Debug.Log(y);
+                player.transform.position = new Vector2(x, y);
+                Debug.Log(player.transform.position);
+            }
+        }
 
         Debug.Log($"Current scene: {currentSceneName}, Previous scene: {previousSceneName}");
         //LoadSceneState();
@@ -54,7 +68,7 @@ public class SceneStateManager : MonoBehaviour
 
             float x = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosX");
             float y = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosY");
-            //float z = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosZ");
+            
             Vector2 pos = new Vector2(x, y);
             player.transform.position = pos;
             Debug.Log(PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosX"));
