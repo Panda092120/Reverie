@@ -4,24 +4,6 @@ using UnityEngine.UI;
 
 public class DaySystem : MonoBehaviour
 {
-    public static DaySystem Instance { get; private set; }
-    //created instance (so it is not destroyed between scenes)
-    private void Awake()
-    {
-        // Check if an instance already exists
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject); // Prevent this object from being destroyed on scene load
-        }
-        else
-        {
-            Destroy(gameObject); // Destroy duplicate instance
-        }
-    }
-
-
-
     // Enums for time of day and weekdays
     public enum TimeOfDay { Morning, Afternoon, Night }
     public enum WeekDay { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday }
