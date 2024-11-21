@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManagerClass : MonoBehaviour
 {
     static public Vector3 savedPlayerPosition;
 
