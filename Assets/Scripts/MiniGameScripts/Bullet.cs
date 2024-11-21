@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-<<<<<<< Updated upstream
+
         if (collision.gameObject.tag != "Bullet" && collision.gameObject.tag == "Wall")
         {
             
@@ -35,7 +35,7 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
         
-=======
+
         if (collision.gameObject.tag != "Bullet")
         {
             if (collision.gameObject.tag == "Wall")
@@ -59,7 +59,7 @@ public class Projectile : MonoBehaviour
                 Debug.Log("hit");
             }
         }
->>>>>>> Stashed changes
+
     }
 }
 
