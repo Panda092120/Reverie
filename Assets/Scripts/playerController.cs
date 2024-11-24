@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float BASE_SPEED = 5;
     private Rigidbody2D rb;
     public KeyCode interact;
+    private LayerMask solidObjectsLayer;
 
     private float currentSpeed;
     [SerializeField] private float JUMP_FORCE = 5f;
