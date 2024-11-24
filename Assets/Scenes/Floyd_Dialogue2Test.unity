@@ -356,8 +356,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59869c1dbf4cbc4da4c5f0d2c9b492e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: History Sheep
-  Dialogue: {fileID: 11400000, guid: 217c414f9ada17a4695e5998c487ff89, type: 2}
+  Name: 
+  Dialogue: {fileID: 0}
 --- !u!114 &249242718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1566,10 +1566,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1079070498994992593, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079070498994992593, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079070498994992593, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079070498994992593, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1534370786194209661, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 556610593}
+    - target: {fileID: 1716840143754000186, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716840143754000186, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716840143754000186, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1716840143754000186, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4746921703690183581, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1653,6 +1685,22 @@ PrefabInstance:
     - target: {fileID: 4917519355614156419, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857768087164872909, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857768087164872909, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857768087164872909, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7857768087164872909, guid: e5f0be26e9cf70b46aeada5d24cdab15, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
