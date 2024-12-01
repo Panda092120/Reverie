@@ -13,5 +13,26 @@ MonoBehaviour:
   m_Name: Player_Can_Fight5
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: 
-    responses: []
+    dialogueText: You've been in the midst of drama for so long, as a freshman as
+      well.
+    responses:
+    - responseText: Did you think I wanted this?
+      nextNode:
+        dialogueText: Problably not, but it's sure entertaining for me!
+        responses:
+        - responseText: Screw yourself (laugh)
+          nextNode:
+            dialogueText: Midterms should be coming soon, make sure to not forget
+              your studies.
+            responses:
+            - responseText: You too, make sure to not dose off in class!
+              nextNode:
+                dialogueText: I've been improving! You've been really inspiring.
+                responses:
+                - responseText: You're going to ask for a autograph now?
+                  nextNode:
+                    dialogueText: 'Screw off! '
+                    responses:
+                    - responseText: (joyous laughter)
+                      nextNode:
+                        dialogueText: 

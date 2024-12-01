@@ -13,5 +13,30 @@ MonoBehaviour:
   m_Name: Player_Can_Fight2
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: 
-    responses: []
+    dialogueText: Congratulations on your trials! I would've been out cold and missed
+      all of the lectures by now.
+    responses:
+    - responseText: Why don't you sleep
+      nextNode:
+        dialogueText: I've never been good at Math and I've been getting distracted
+          playing League all day, so I always sleep late.
+        responses:
+        - responseText: You don't need me to tell you that that's a bad habit right?
+          nextNode:
+            dialogueText: Of course... then a word for advice right back at you.
+              You should interact with people more as well, some of my friends don't
+              go outside so when they socialize its very stressful for them.
+            responses:
+            - responseText: Makes sense. (Isn't that common knowledge though?)
+              nextNode:
+                dialogueText: 
+                responses: []
+    - responseText: I don't care, stop talking to me.
+      nextNode:
+        dialogueText: Imagine talking to someone and complaining that they're talking
+          to you, does that sound like anyone you know?
+        responses:
+        - responseText: ...
+          nextNode:
+            dialogueText: 
+            responses: []

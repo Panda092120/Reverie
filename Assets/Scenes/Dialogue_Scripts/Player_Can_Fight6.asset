@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: Player_Can_Fight6
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: 
-    responses: []
+    dialogueText: You've been through enough this semeter. (Thanks for playing!)
+    responses:
+    - responseText: Goodbye
+      nextNode:
+        dialogueText: 
+        responses: []

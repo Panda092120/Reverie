@@ -13,5 +13,28 @@ MonoBehaviour:
   m_Name: Player_Can_Fight4
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: 
-    responses: []
+    dialogueText: Oh hey, I heard you got in a fight are you okay?
+    responses:
+    - responseText: Yeah, it was no big deal.
+      nextNode:
+        dialogueText: Awesome! You're back on the spotlight again, I imagine you'll
+          get some more attention soon.
+        responses:
+        - responseText: Is that supposed to be a good thing?
+          nextNode:
+            dialogueText: Depends, remember to guard yourself mentally, some people
+              just put on a facade for a show.
+            responses:
+            - responseText: I'll keep that in mind.
+              nextNode:
+                dialogueText: 
+                responses: []
+    - responseText: I don't want to talk about it.
+      nextNode:
+        dialogueText: If you feel like you're too weak, or helpless, its good to
+          talk to people.
+        responses:
+        - responseText: ...
+          nextNode:
+            dialogueText: 
+            responses: []
