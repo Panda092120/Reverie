@@ -50,4 +50,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Interior/Music Store.unity
     guid: 24f71f9d7dbd46e45a2a25223b4f0930
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/GymBattle.unity
+    guid: 6d2d33c4d9d6f564fba19b63d5c05d73
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/IceCreamBattle.unity
+    guid: af0cbbdda62982d4eb918e6fcb8d81ed
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/MusicBattle.unity
+    guid: 22a96531be7e1a24685a40a2245a58e9
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/BakeryBattle.unity
+    guid: 63878f9e61ceb3b4fa2f56cf2dbe3325
   m_configObjects: {}

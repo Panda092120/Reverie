@@ -15,7 +15,14 @@ public class BattleInteraction : MonoBehaviour
     [SerializeField] private string sceneName;  // The scene we would like to move into after dialogue ends
 
     private bool triggerSceneSwap = false;  // Flag to check if we need to change scenes after dialogue
-    
+
+    DaySystem daySystem;
+
+    private void Awake()
+    {
+        daySystem = FindObjectOfType<DaySystem>();
+    }
+
 
     private void Update()
     {
@@ -24,6 +31,7 @@ public class BattleInteraction : MonoBehaviour
         {
             // Start the NPC dialogue
             StartNPCDialogue();
+            daySystem.AdvanceTime();
             
         }
 
