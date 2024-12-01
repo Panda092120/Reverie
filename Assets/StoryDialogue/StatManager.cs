@@ -57,11 +57,12 @@ public class StatManager : MonoBehaviour
             this.social += social;
         }
 
-        //for story stuff
-        public bool Act1 = false;
-        public bool Act2 = false;
-        public bool Act3 = false;
-        public bool finalAct = false;
+        //for story stuff, Player_Can_Fight# 1-6
+        public bool Act1 = false; //sheep boss
+        public bool Act2 = false; //professor boss
+        public bool Act3 = false; //student boss
+        public bool finalAct = false; //heart boss
+        public bool gameEnd = false; //guide NPC last interaction
 
 
 
