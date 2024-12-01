@@ -13,5 +13,24 @@ MonoBehaviour:
   m_Name: Player_Can_Fight1
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: 
-    responses: []
+    dialogueText: You will need to participate and practice in activities before
+      confronting your foes.
+    responses:
+    - responseText: Activities?
+      nextNode:
+        dialogueText: Yes! Do some training, relax, or listen to music to destress.
+          University can be pretty pressuring.
+        responses:
+        - responseText: Okay.
+          nextNode:
+            dialogueText: 
+            responses: []
+    - responseText: Where do I do activities?
+      nextNode:
+        dialogueText: If you go southwest of the lecture halls, there are some buildings
+          to do activities in.
+        responses:
+        - responseText: Okay.
+          nextNode:
+            dialogueText: 
+            responses: []

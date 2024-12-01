@@ -13,5 +13,33 @@ MonoBehaviour:
   m_Name: Player_Can_Fight3
   m_EditorClassIdentifier: 
   RootNode:
-    dialogueText: 
-    responses: []
+    dialogueText: Oh it's you! I heard your argument with the professor.
+    responses:
+    - responseText: What! Some privacy would have been nice you know!
+      nextNode:
+        dialogueText: What do you mean? The entire floor could hear you guys argue.
+        responses:
+        - responseText: (embarrassed)
+          nextNode:
+            dialogueText: I support you, that professor is a jerk anyways, someone
+              had to step in.
+            responses:
+            - responseText: Thank you.
+              nextNode:
+                dialogueText: 
+                responses: []
+    - responseText: Yeah, I had to talk some sense to him.
+      nextNode:
+        dialogueText: Nice! It's all over social media now. Do try to stay now for
+          now, you might find unwanted attention.
+        responses:
+        - responseText: Unwanted attention?
+          nextNode:
+            dialogueText: Yeah people like reporting stories, your confrontation
+              is a big one and some people will keep a close eye on you for their
+              fans.
+            responses:
+            - responseText: I see...
+              nextNode:
+                dialogueText: 
+                responses: []

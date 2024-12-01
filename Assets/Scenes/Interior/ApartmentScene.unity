@@ -2205,6 +2205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482422b2e049aad4f90240e197bfb05d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rb: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &282401482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2217,9 +2220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df83affadb4876469fb248042a5498d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
-  rb: {fileID: 282401485}
-  animator: {fileID: 282401484}
 --- !u!114 &282401483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2514,7 +2514,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &282759291
@@ -2545,8 +2545,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcDialogues:
-  - 1
-  - 2
+  - How are you doing today!
+  - Remember to do your 3 activities for the day to progress!
   dialogueManager: {fileID: 0}
 --- !u!61 &282759293
 BoxCollider2D:
@@ -6900,7 +6900,7 @@ SpriteRenderer:
   m_Size: {x: 2.6666667, y: 2.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &701568748
@@ -9749,12 +9749,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1762929472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d469aab01b4f4b438cf2f139a16cadd, type: 3}
+  m_Script: {fileID: 11500000, guid: fe4caf441a2aabb40a611efa29b870b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1217173352}
-  SFXSource: {fileID: 0}
-  background: {fileID: 8300000, guid: fec1a77746bbebb4b8209fe8b8ed1a3d, type: 3}
+  SFXSource: {fileID: 1401063370}
+  background: {fileID: 0}
   gotHit: {fileID: 0}
   hover: {fileID: 0}
 --- !u!81 &1762929474
