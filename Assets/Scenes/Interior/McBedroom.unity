@@ -3576,11 +3576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d469aab01b4f4b438cf2f139a16cadd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 1359889227}
-  SFXSource: {fileID: 0}
-  background: {fileID: 8300000, guid: fec1a77746bbebb4b8209fe8b8ed1a3d, type: 3}
-  gotHit: {fileID: 0}
-  hover: {fileID: 0}
 --- !u!81 &672092291
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7021,6 +7016,7 @@ MonoBehaviour:
   Act2: 0
   Act3: 0
   finalAct: 0
+  gameEnd: 0
 --- !u!4 &1360251808
 Transform:
   m_ObjectHideFlags: 0
@@ -7122,6 +7118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482422b2e049aad4f90240e197bfb05d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  rb: {fileID: 1562472354}
+  animator: {fileID: 1562472353}
 --- !u!114 &1562472351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7134,9 +7133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df83affadb4876469fb248042a5498d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rb: {fileID: 1562472354}
-  animator: {fileID: 1562472353}
 --- !u!114 &1562472352
 MonoBehaviour:
   m_ObjectHideFlags: 0
