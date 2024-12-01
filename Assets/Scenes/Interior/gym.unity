@@ -149,12 +149,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 146400141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d469aab01b4f4b438cf2f139a16cadd, type: 3}
+  m_Script: {fileID: 11500000, guid: fe4caf441a2aabb40a611efa29b870b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 2090213387}
   SFXSource: {fileID: 0}
-  background: {fileID: 8300000, guid: 6e8976d2c5caeec46a915632be03f215, type: 3}
+  background: {fileID: 8300000, guid: b096171bd9f345b42af70a93ac85caca, type: 3}
   gotHit: {fileID: 0}
   hover: {fileID: 0}
 --- !u!81 &146400143
@@ -891,9 +891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5df83affadb4876469fb248042a5498d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  rb: {fileID: 840366495}
-  animator: {fileID: 840366494}
 --- !u!114 &840366493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -919,7 +916,7 @@ Animator:
   m_GameObject: {fileID: 840366490}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bd5f151a52ed1c146b689dcc09cf270e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 83e174207ffbb394384b6c288b2c8749, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

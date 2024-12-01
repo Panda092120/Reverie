@@ -3573,9 +3573,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 672092289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d469aab01b4f4b438cf2f139a16cadd, type: 3}
+  m_Script: {fileID: 11500000, guid: fe4caf441a2aabb40a611efa29b870b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicSource: {fileID: 1359889227}
+  SFXSource: {fileID: 0}
+  background: {fileID: 8300000, guid: 3b143dcfb4689ff48839807ea0fd4868, type: 3}
+  gotHit: {fileID: 0}
+  hover: {fileID: 0}
 --- !u!81 &672092291
 AudioListener:
   m_ObjectHideFlags: 0
@@ -7158,7 +7163,7 @@ Animator:
   m_GameObject: {fileID: 1562472349}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bd5f151a52ed1c146b689dcc09cf270e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 83e174207ffbb394384b6c288b2c8749, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

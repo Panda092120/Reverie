@@ -1230,12 +1230,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1053322802}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d469aab01b4f4b438cf2f139a16cadd, type: 3}
+  m_Script: {fileID: 11500000, guid: fe4caf441a2aabb40a611efa29b870b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1218745701}
   SFXSource: {fileID: 0}
-  background: {fileID: 8300000, guid: 8627147f142ed4445a973a67498ab4b4, type: 3}
+  background: {fileID: 8300000, guid: 71b41982f2617f34eb3bfff870940958, type: 3}
   gotHit: {fileID: 0}
   hover: {fileID: 0}
 --- !u!81 &1053322804
