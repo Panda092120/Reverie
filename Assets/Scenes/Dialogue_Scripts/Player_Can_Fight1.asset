@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f80d00bbcd6204584bbdfe6bd5b1a4, type: 3}
+  m_Name: Player_Can_Fight1
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogueText: You will need to participate and practice in activities before
+      confronting your foes.
+    responses:
+    - responseText: Activities?
+      nextNode:
+        dialogueText: Yes! Do some training, relax, or listen to music to destress.
+          University can be pretty pressuring.
+        responses:
+        - responseText: Okay.
+          nextNode:
+            dialogueText: 
+            responses: []
+    - responseText: Where do I do activities?
+      nextNode:
+        dialogueText: If you go southwest of the lecture halls, there are some buildings
+          to do activities in.
+        responses:
+        - responseText: Okay.
+          nextNode:
+            dialogueText: 
+            responses: []

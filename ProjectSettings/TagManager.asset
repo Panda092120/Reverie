@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - Wall
+  - NPC
+  - Audio
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Solid Objects
   - Water
   - UI
   - 
