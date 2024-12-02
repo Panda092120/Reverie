@@ -44,6 +44,7 @@ public class SceneStateManager : MonoBehaviour
             GameObject player = GameObject.FindWithTag("Player");
             if (player != null)
             {
+                Debug.Log("Hello");
                 float x = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosX", player.transform.position.x);
                 float y = PlayerPrefs.GetFloat(previousSceneName + "_PlayerPosY", player.transform.position.y);
                 Debug.Log(x);
