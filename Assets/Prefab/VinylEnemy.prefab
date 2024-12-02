@@ -109,11 +109,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Vinyl
   unitLevel: 25
-  damage: 50
-  maxHP: 300
-  currentHP: 300
-  intellect: 21
-  physical: 20
-  social: 27
-  luck: 20
+  damage: 15
+  maxHP: 25
+  currentHP: 25
+  intellect: 12
+  physical: 2
+  social: 5
+  luck: 10
   attackType: 0

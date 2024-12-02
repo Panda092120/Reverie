@@ -30,7 +30,6 @@ public class MinigameController : MonoBehaviour
         count = 0;
         var minigameNum = Random.Range(1, 3);
         State = GameState.WON;
-        minigameNum = 1;
         if(minigameNum == 1)
         {
            Minigame = Instantiate(BulletHell);
