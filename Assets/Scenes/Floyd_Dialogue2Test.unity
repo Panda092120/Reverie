@@ -166,6 +166,7 @@ MonoBehaviour:
   Act2: 0
   Act3: 0
   finalAct: 0
+  gameEnd: 0
 --- !u!4 &226940373
 Transform:
   m_ObjectHideFlags: 0
