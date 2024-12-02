@@ -22,17 +22,5 @@ MonoBehaviour:
         responses:
         - responseText: Screw yourself (laugh)
           nextNode:
-            dialogueText: Midterms should be coming soon, make sure to not forget
-              your studies.
-            responses:
-            - responseText: You too, make sure to not dose off in class!
-              nextNode:
-                dialogueText: I've been improving! You've been really inspiring.
-                responses:
-                - responseText: You're going to ask for a autograph now?
-                  nextNode:
-                    dialogueText: 'Screw off! '
-                    responses:
-                    - responseText: (joyous laughter)
-                      nextNode:
-                        dialogueText: 
+            dialogueText: Screw you to (laugh)
+            responses: []
