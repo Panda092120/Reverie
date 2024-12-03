@@ -108,12 +108,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Floyd
-  unitLevel: 25
-  damage: 70
-  maxHP: 250
-  currentHP: 250
-  intellect: 17
-  physical: 27
-  social: 17
-  luck: 40
+  unitLevel: 30
+  damage: 40
+  maxHP: 210
+  currentHP: 210
+  intellect: 39
+  physical: 39
+  social: 39
+  luck: 22
   attackType: 0

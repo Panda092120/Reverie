@@ -108,12 +108,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitName: Elizabeth
-  unitLevel: 25
-  damage: 50
-  maxHP: 300
-  currentHP: 300
-  intellect: 21
-  physical: 20
-  social: 27
-  luck: 20
+  unitLevel: 30
+  damage: 40
+  maxHP: 210
+  currentHP: 210
+  intellect: 39
+  physical: 39
+  social: 39
+  luck: 22
   attackType: 0

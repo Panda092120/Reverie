@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6567794306862948190
+--- !u!1 &2865784479084585054
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8395490972152781678}
-  - component: {fileID: 2778459502359967058}
-  - component: {fileID: 3327453094263432053}
-  - component: {fileID: 8401511898315264682}
-  - component: {fileID: 3946159201523321924}
+  - component: {fileID: 86815765986838472}
+  - component: {fileID: 2394233548473461267}
+  - component: {fileID: 355950488296551044}
+  - component: {fileID: 3491682842565486931}
   m_Layer: 5
-  m_Name: Boss3.2 StudentMale
+  m_Name: Heart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &8395490972152781678
+--- !u!224 &86815765986838472
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6567794306862948190}
+  m_GameObject: {fileID: 2865784479084585054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,24 +35,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 184.08}
-  m_SizeDelta: {x: 533.5664, y: 296.9214}
+  m_AnchoredPosition: {x: 50.988792, y: 120.096664}
+  m_SizeDelta: {x: 400.079, y: 395.8153}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &2778459502359967058
+--- !u!222 &2394233548473461267
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6567794306862948190}
+  m_GameObject: {fileID: 2865784479084585054}
   m_CullTransparentMesh: 1
---- !u!114 &3327453094263432053
+--- !u!114 &355950488296551044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6567794306862948190}
+  m_GameObject: {fileID: 2865784479084585054}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -67,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 963e1fcf4574c9d4885c0dce1575081e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f955e990ec848eb4dbbd0432a582509d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -77,37 +76,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8401511898315264682
+--- !u!114 &3491682842565486931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6567794306862948190}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b3161c1a61eb47c8bdc6645029ab152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueText: {fileID: 0}
-  dialogueBox: {fileID: 0}
-  playerController: {fileID: 0}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  textFont: {fileID: 0}
-  typingSpeed: 0.05
---- !u!114 &3946159201523321924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6567794306862948190}
+  m_GameObject: {fileID: 2865784479084585054}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 475d8d7ed9646504888a5702b5d7ed33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitName: Timmy
+  unitName: Heart
   unitLevel: 30
   damage: 40
   maxHP: 210
