@@ -62,4 +62,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Battle Scenes/BakeryBattle.unity
     guid: 63878f9e61ceb3b4fa2f56cf2dbe3325
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/ElizabethBattle.unity
+    guid: 709f55802d2218a4d965bf907e8c4401
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/FloydBattle.unity
+    guid: 8ac1f9cbd8188514ea72ba4d5f41367c
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/ProfessorBattle.unity
+    guid: 16f16252f79a85747ae8dbfea3569f2d
+  - enabled: 1
+    path: Assets/Scenes/Battle Scenes/TimmyBattle.unity
+    guid: 65062530b3c5261428fea8e41f08d8f1
   m_configObjects: {}

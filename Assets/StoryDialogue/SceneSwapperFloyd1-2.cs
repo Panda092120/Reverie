@@ -12,6 +12,13 @@ public class SceneSwapper : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        PlayerManager playerManager = FindObjectOfType<PlayerManager>();
+        GameObject players = GameObject.FindWithTag("Player");
+        
+        if (playerManager != null)
+        {
+            PlayerManager.savedPlayerPosition = players.transform.position;
+        }
 
         if (player) SceneManager.LoadScene(sceneName);
     }
