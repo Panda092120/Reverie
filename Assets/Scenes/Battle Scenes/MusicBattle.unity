@@ -2078,6 +2078,8 @@ MonoBehaviour:
   reasonButton: {fileID: 1381239362}
   ItemButton: {fileID: 153650983}
   RunButton: {fileID: 193724189}
+  isActivity: 1
+  activity: 2
   count: 0
   WinLoss: 0
 --- !u!4 &1213177831

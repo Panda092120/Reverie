@@ -1630,7 +1630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 1741553828}
   dialogueBox: {fileID: 2073899575}
-  playerController: {fileID: 0}
+  playerController: {fileID: 840366498}
   textColor: {r: 1, g: 1, b: 1, a: 1}
   textFont: {fileID: 12800000, guid: 6ee455897a1df114db6047a1bd5f6c10, type: 3}
   typingSpeed: 0.05
@@ -3525,7 +3525,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.201
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0

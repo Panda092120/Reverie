@@ -18,6 +18,14 @@ public class BattleHUD : MonoBehaviour
 		hpSlider.value = unit.currentHP;
 	}
 
+	public void SetPlayerHUD(PlayerUnit unit)
+	{
+		nameText.text = unit.unitName;
+		levelText.text = "Lvl " + unit.unitLevel;
+		hpSlider.maxValue = unit.maxHP;
+		hpSlider.value = unit.currentHP;
+	}
+
 	public void SetHP(int hp)
 	{
 		hpSlider.value = hp;

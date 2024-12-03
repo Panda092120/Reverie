@@ -109,11 +109,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitName: Dumbell
   unitLevel: 25
-  damage: 50
-  maxHP: 300
-  currentHP: 300
-  intellect: 21
-  physical: 20
-  social: 27
-  luck: 20
+  damage: 20
+  maxHP: 40
+  currentHP: 40
+  intellect: 0
+  physical: 15
+  social: 10
+  luck: 0
   attackType: 0
