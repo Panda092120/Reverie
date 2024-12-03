@@ -31,14 +31,14 @@ public class BattleInteraction : MonoBehaviour
         {
             // Start the NPC dialogue
             StartNPCDialogue();
-            daySystem.AdvanceTime();
+            
             
         }
 
         // If the dialogue is finished and a scene swap is required, change scenes
         if (triggerSceneSwap && !dialogueManager.IsDialogueActive())
         {
-            
+            daySystem.AdvanceTime();
             SceneSave();
             SceneManager.LoadScene(sceneName);
         }
