@@ -64,10 +64,7 @@ public class DaySystem : MonoBehaviour
     // Update method to check for player input to advance time (e.g., press spacebar)
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AdvanceTime();
-        }
+
     }
 
     // Method to advance the time of day and eventually the day

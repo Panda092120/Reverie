@@ -15,7 +15,7 @@ public class BattleSystem : MonoBehaviour
 	public Transform playerBattleStation;
 	public Transform enemyBattleStation;
 
-	Unit playerUnit;
+	PlayerUnit playerUnit;
 	Unit enemyUnit;
 
 	public Text dialogueText;
@@ -30,9 +30,12 @@ public class BattleSystem : MonoBehaviour
 	public Button ItemButton;
 	public Button RunButton;
 
+	public bool isActivity;
+	public int activity; // 1 = cream 2 = music 3 = gym
 	public int count;
 	public bool WinLoss;
 
+	StatManager stats = StatManager.Instance;
 	MinigameController minigameController;
 
 	// Start is called before the first frame update
@@ -45,7 +48,7 @@ public class BattleSystem : MonoBehaviour
 	IEnumerator SetupBattle()
 	{
 		GameObject playerGO = Instantiate(playerPrefab, playerBattleStation);
-		playerUnit = playerGO.GetComponent<Unit>();
+		playerUnit = playerGO.GetComponent<PlayerUnit>();
 		minigameController = FindObjectOfType<MinigameController>();
 
 		GameObject enemyGO = Instantiate(enemyPrefab, enemyBattleStation);
@@ -53,7 +56,7 @@ public class BattleSystem : MonoBehaviour
 
 		dialogueText.text = enemyUnit.unitName + " approaches...";
 
-		playerHUD.SetHUD(playerUnit);
+		playerHUD.SetPlayerHUD(playerUnit);
 		enemyHUD.SetHUD(enemyUnit);
 
 		yield return new WaitForSeconds(2f);
@@ -152,6 +155,33 @@ public class BattleSystem : MonoBehaviour
 		if (state == BattleState.WON)
 		{
 			dialogueText.text = "You won the battle!";
+			if(isActivity)
+            {
+				if(activity == 1) // Cream
+                {
+					stats.addExperience(3);
+					stats.addInteligence(1);
+					stats.addPhysical(1);
+					stats.addSocial(1);
+                }
+				if(activity == 2) // Music
+                {
+					stats.addExperience(5);
+					stats.addInteligence(2);
+					stats.addPhysical(1);
+					stats.addSocial(2);
+				}
+				if(activity == 3) // Gym
+                {
+					stats.addExperience(6);
+					stats.addInteligence(1);
+					stats.addPhysical(3);
+					stats.addSocial(2);
+				}
+				
+            }
+				
+
 		}
 		else if (state == BattleState.LOST)
 		{

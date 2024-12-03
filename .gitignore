@@ -72,5 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Assets/Scenes/BarAccuracy.unity
 Assets/Scenes/BarAccuracy.unity.meta
-*.meta
-*.unity
+
